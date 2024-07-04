@@ -1,10 +1,12 @@
+require('dotenv').config();
+
 module.exports = {
     dialect: 'postgres',
-    port: process.env.DB_PORT || '5432',
-    host: process.env.DB_HOST || '10.232.48.40',
-    username: process.env.DB_USERNAME || 'postgres',
-    password: process.env.DB_PASSWORD || 'thdmrede',
-    database: process.env.DB_DATABASE || 'ommc-invest',
+    port: process.env.DB_PORT,
+    host: process.env.DB_HOST,
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
     dialectOptions: {
         // Defina ssl apenas se DB_SSL for true
         ...(process.env.DB_SSL === 'true'
